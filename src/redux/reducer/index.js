@@ -7,6 +7,9 @@ const initialState = {
     searchResults: [],
     searchInputs: '',
     searchMade: false,
+    departmentSearchMade: false,
+    departmentWorks: [],
+    departmentWorkIds: {},
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -16,6 +19,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state, work: payload };
     case "GET_WORKS":
       return { ...state, works: payload, searchMade: true };
+    case "GET_WORKS_D":
+      return { ...state, departmentWorks: payload };
     case "SEARCH_STARTED":
       return { ...state, searchMade: false };
     case "ADD_WORK":
@@ -31,8 +36,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
         console.log('tenemos un search ', payload);
         return { ...state, searchResults: payload };
     case "GET_DEPARTMENT_WORKS":
-        console.log('tenemos un search ', payload);
-        return { ...state, objectIds: payload };
+        console.log('tenemos departmentWorkIds ', payload);
+        return { ...state, departmentWorkIds: payload , departmentSearchMade: true};
+    case "DEPARTMENT_SEARCH_STARTED":
+        return { ...state, departmentSearchMade: false };
+
         default:
       return state;
   }

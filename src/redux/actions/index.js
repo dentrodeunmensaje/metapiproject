@@ -44,6 +44,12 @@ export const startSearch = () => {
   };
 }
 
+export const departmentSearchStarted = () => {
+  return {
+    type: "DEPARTMENT_SEARCH_STARTED",
+  };
+}
+
 export const getObjectIds = () => {
   return async (dispatch) => {
     return fetch(
@@ -179,5 +185,22 @@ export const getDepartmentWorks = (departmentId) => {
         });
       }
       );
+  }
+}
+
+export const getWorksD= (ids1) => {
+  var promises = ids1.map((id) => {
+    return `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
+  }  );
+  console.log(promises, 'start search of many works Dept');
+  return async (dispatch) => {
+    return Promise.all(promises.map((url) => fetch(url).then((res) => res.json())))
+      .then((data) => {
+        console.log(data, 'from getWorksD in actions');
+        dispatch({
+          type: "GET_WORKS_D",
+          payload: data,
+        });
+      });
   }
 }
