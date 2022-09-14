@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import { searchByQuery } from "../redux/actions";
 import SearchResult from "./SearchResult";
 import { getWorks } from "../redux/actions";
-import {startSearch} from '../redux/actions'
-import {useEffect} from 'react'
+import { startSearch } from "../redux/actions";
+import { useEffect } from "react";
 import Work from "./Work";
+import { clearSearchResults } from "../redux/actions";
 
 function Search() {
   const allDepartments = useSelector((state) => state.departments);
@@ -29,8 +30,8 @@ function Search() {
 
   //use useEffect to dispatch startSearch on load
   useEffect(() => {
-    dispatch(startSearch())
-  }, [])
+    dispatch(startSearch());
+  }, []);
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -55,7 +56,15 @@ function Search() {
     dispatch(getWorks(searchResults.objectIDs));
   };
 
- 
+  let clearResults = () => {
+    searchInput = {
+      q: "",
+      departmentId: 0,
+      hasImages: false,
+      isHighlight: false,
+    };
+    dispatch(clearSearchResults());
+  };
 
   return (
     <div>
@@ -117,30 +126,36 @@ function Search() {
         <br />
         <input type="submit" value="Search" />
       </form>
-      {searchResults.objectIDs && searchMade===false ? getResults() : null}
-      {searchResults.total? <p>Total Results:{searchResults.total}</p>: <p>No results</p>}
-      
-       {works? works.map((work) => {
-          return <Work 
-          title={work.title}
-          image = {work.primaryImageSmall}
-          country = {work.country}
-          dimensions = {work.dimensions}
-          beginDate = {work.beginDate}
-          endDate = {work.endDate}
-          additionalImages = {work.additionalImages}
-          medium = {work.medium}
-          department = {work.department}
-          culture = {work.culture}
-          artist = {work.artistDisplayName}
-          date = {work.objectDate}
-          objectID = {work.objectID}
-          key = {work.objectID}
+      <button onClick={clearResults}>Clear search results</button>
+      {searchResults.objectIDs && searchMade === false ? getResults() : null}
+      {searchResults.total ? (
+        <p>Total Results:{searchResults.total}</p>
+      ) : (
+        <p>No results</p>
+      )}
 
-          />
-          
-          }): null}
-       
+      {works
+        ? works.map((work) => {
+            return (
+              <Work
+                title={work.title}
+                image={work.primaryImageSmall}
+                country={work.country}
+                dimensions={work.dimensions}
+                beginDate={work.beginDate}
+                endDate={work.endDate}
+                additionalImages={work.additionalImages}
+                medium={work.medium}
+                department={work.department}
+                culture={work.culture}
+                artist={work.artistDisplayName}
+                date={work.objectDate}
+                objectID={work.objectID}
+                key={work.objectID}
+              />
+            );
+          })
+        : null}
     </div>
   );
 }

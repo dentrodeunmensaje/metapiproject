@@ -9,8 +9,8 @@ function Work({
   country,
   dimensions,
   beginDate,
+  // additionalImages,
   endDate,
-  additionalImages,
   medium,
   department,
   culture,
@@ -22,7 +22,7 @@ function Work({
       <h3>{title}</h3>
       {artist ? <p>Artist: {artist}</p> : null}
       {image ? <img src={image} /> : <p>No main image in the API</p>}
-      {additionalImages ? (
+      {/* {additionalImages ? (
         <>
             {additionalImages.map((image) => (
               <span key={image} >
@@ -32,7 +32,7 @@ function Work({
 
           <br />
         </>
-      ) : null}
+      ) : null} */}
       {country ? <p>Country: {country}</p> : null}
       {dimensions ? <p>Dimensions: {dimensions}</p> : null}
       {medium ? <p>Medium: {medium}</p> : null}

@@ -20,7 +20,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
     case "GET_WORKS":
       return { ...state, works: payload, searchMade: true };
     case "GET_WORKS_D":
-      return { ...state, departmentWorks: payload };
+      return { ...state, departmentWorks: payload , departmentSearchMade: true};
     case "SEARCH_STARTED":
       return { ...state, searchMade: false };
     case "ADD_WORK":
@@ -37,10 +37,13 @@ const rootReducer = (state = initialState, { type, payload }) => {
         return { ...state, searchResults: payload };
     case "GET_DEPARTMENT_WORKS":
         console.log('tenemos departmentWorkIds ', payload);
-        return { ...state, departmentWorkIds: payload , departmentSearchMade: true};
+        return { ...state, departmentWorkIds: payload };
     case "DEPARTMENT_SEARCH_STARTED":
         return { ...state, departmentSearchMade: false };
-
+    case "CLEAR_DEPARTMENT_WORKS":
+        return { ...state, departmentWorks: [], departmentWorkIds: {}};
+    case "CLEAR_SEARCH_RESULTS":
+        return { ...state, searchResults: [], searchMade: false, works: [], searchInputs: ''};
         default:
       return state;
   }

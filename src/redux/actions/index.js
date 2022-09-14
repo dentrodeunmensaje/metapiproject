@@ -204,3 +204,15 @@ export const getWorksD= (ids1) => {
       });
   }
 }
+
+export const clearDepartmentWorks = () => {
+  return {
+    type: "CLEAR_DEPARTMENT_WORKS",
+  };
+}
+
+export const clearSearchResults = () => {
+  return {
+    type: "CLEAR_SEARCH_RESULTS",
+  };
+}
