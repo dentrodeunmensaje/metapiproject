@@ -153,7 +153,7 @@ function Department(props) {
        {/* {departmentWorkIds ? console.log(departmentWorkIds.objectIDs) : null} */}
        {console.log(departmentSearchMade)}
        {console.log(departmentWorks)}
-       {!departmentSearchMade ? <button onClick={getWorks}>Get Works</button> : null}
+       {!departmentSearchMade ? <button onClick={getWorks}>SHOW ME THE ART!</button> : null}
        {departmentWorks.length === 0 && searching != false ? <p>Retrieving {departmentWorkIds.objectIDs.length} works from the database</p> : null}
        {departmentWorks.length!=0 ? departmentWorks.map((work, index) => {
           return(
@@ -173,6 +173,7 @@ function Department(props) {
              date = {work.objectDate}
              objectID = {work.objectID}
              key = {work.objectID}
+             favorite = {work.favorite}
             />
             </div>
           )

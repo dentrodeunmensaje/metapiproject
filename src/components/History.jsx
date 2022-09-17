@@ -7,13 +7,14 @@ function History() {
   const seenWorks = useSelector((state) => state.seenWorks);
   return (
     <div>
-      History
-      {seenWorks?.map((work) => {
+      <h3>Your favorites</h3>
+      {seenWorks?.map((work, index) => {
+        if (index>0){
           return(
             <Work
             key={work.objectID}
             title={work.title}
-            image={work.primaryImageSmall}  
+            image={work.image}  
             country={work.country}
             dimensions={work.dimensions}
             beginDate={work.beginDate}
@@ -24,8 +25,11 @@ function History() {
             culture={work.culture}
             department={work.department}
             date={work.date}
+            favorite={work.favorite}
+            objectID={work.objectID}
           />
           )
+        }
       })}
     </div>
   );

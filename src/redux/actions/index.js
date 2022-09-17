@@ -216,3 +216,10 @@ export const clearSearchResults = () => {
     type: "CLEAR_SEARCH_RESULTS",
   };
 }
+
+export const removeFromSeenWorks = (objectID) => {
+  return {
+    type: "REMOVE_FROM_SEEN_WORKS",
+    payload: objectID,
+  };
+}

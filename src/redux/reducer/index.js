@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
     case "SEARCH_STARTED":
       return { ...state, searchMade: false };
     case "ADD_WORK":
-        console.log(state.seenWorks);
+        console.log(state.seenWorks, "seen works from reducer");
         return { ...state, seenWorks: [...state.seenWorks, payload] };
     case "GET_OBJECT_IDS":
         console.log('tenemos objectIDs ', payload);
@@ -43,7 +43,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
     case "CLEAR_DEPARTMENT_WORKS":
         return { ...state, departmentWorks: [], departmentWorkIds: {}};
     case "CLEAR_SEARCH_RESULTS":
+        console.log('clearing search results');
         return { ...state, searchResults: [], searchMade: false, works: [], searchInputs: ''};
+    case "REMOVE_FROM_SEEN_WORKS":
+        console.log('removing from seen works');
+        return { ...state, seenWorks: state.seenWorks.filter((work) => work.objectID !== payload)};
         default:
       return state;
   }

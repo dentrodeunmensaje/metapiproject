@@ -39,7 +39,7 @@ function Nav() {
       <div >
         <ul>
           <li className="nav">
-            <Link to="/history">Your Browsing History</Link>
+            <Link to="/history">Your favourites</Link>
           </li>&nbsp; &nbsp;
           <li className="nav">
             <Link to="/departments">Departments</Link>

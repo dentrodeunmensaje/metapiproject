@@ -20,7 +20,7 @@ function Search() {
   const searchMade = useSelector((state) => state.searchMade);
 
   const dispatch = useDispatch();
-  const searchInput = {
+  let searchInput = {
     q: "",
     departmentId: 0,
     hasImages: false,
@@ -83,6 +83,7 @@ function Search() {
           onChange={(e) => {
             handleChange(e);
           }}
+          
         />
         <br />
         <label>Department</label>
@@ -93,12 +94,14 @@ function Search() {
             handleChange(e);
           }}
         >
+          <option value="" disabled selected>Select a department *Required</option>
           <br />
           {allDepartments.departments?.map((department) => {
             return (
               <option
                 key={department.departmentId}
                 value={department.departmentId}
+                
               >
                 {department.displayName}
               </option>
@@ -137,6 +140,7 @@ function Search() {
       {works
         ? works.map((work) => {
             return (
+              <div key= {work.objectID}>
               <Work
                 title={work.title}
                 image={work.primaryImageSmall}
@@ -152,7 +156,9 @@ function Search() {
                 date={work.objectDate}
                 objectID={work.objectID}
                 key={work.objectID}
+                favorite={work.favorite}
               />
+              </div>
             );
           })
         : null}

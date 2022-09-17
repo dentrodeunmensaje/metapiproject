@@ -14,7 +14,7 @@ function Departments() {
 
   return (
     <div className="departments">
-      
+      <h3>Departments</h3>
       {allDepartments.departments?.map((department, index) => {
         return(
          <span className="departmentLink" key={index}>
