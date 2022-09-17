@@ -22,10 +22,8 @@ function Departments() {
           <Link to={`/departments/${department.departmentId}`}>
             {department.displayName}<br/>
           </Link>
-        
           {/* <p>{department.departmentId}</p> */}
          </span>
-          
         )
       })}
 

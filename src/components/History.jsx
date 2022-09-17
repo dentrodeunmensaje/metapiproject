@@ -8,6 +8,7 @@ function History() {
   return (
     <div>
       <h3>Your favorites</h3>
+      {seenWorks.length === 1 && <p>Nothing here yet, make a search or visit the departments page to use the button on every work and add it to this list.</p>}
       {seenWorks?.map((work, index) => {
         if (index>0){
           return(

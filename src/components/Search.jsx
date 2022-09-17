@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { searchByQuery } from "../redux/actions";
-import SearchResult from "./SearchResult";
 import { getWorks } from "../redux/actions";
 import { startSearch } from "../redux/actions";
 import { useEffect } from "react";
@@ -11,45 +10,66 @@ import { clearSearchResults } from "../redux/actions";
 
 function Search() {
   const allDepartments = useSelector((state) => state.departments);
-  const searchQuery = useSelector((state) => state.searchQuery);
-  const searchHasImages = useSelector((state) => state.searchHasImages);
-  const searchDepartment = useSelector((state) => state.searchDepartment);
-  const searchIsHighlight = useSelector((state) => state.searchIsHighlight);
   const searchResults = useSelector((state) => state.searchResults);
   const works = useSelector((state) => state.works);
   const searchMade = useSelector((state) => state.searchMade);
 
   const dispatch = useDispatch();
-  let searchInput = {
+  
+  const [searchInput, setSearchInput] = React.useState({
     q: "",
     departmentId: 0,
     hasImages: false,
     isHighlight: false,
-  };
-  const searchUrl = "";
+  });
+
+  const [errors, setErrors] = React.useState({
+    q: "",
+    departmentId: "",
+  });
 
   //use useEffect to dispatch startSearch on load
   useEffect(() => {
     dispatch(startSearch());
   }, []);
 
+  useEffect(() => {
+    let check = validate (searchInput);
+    setErrors(check);
+  }, [searchInput]);
+
   let handleSubmit = (e) => {
     e.preventDefault();
     dispatch(searchByQuery(searchInput));
   };
 
+
   let handleChange = (e) => {
     //console.log("Changed for: " + e.target.value);
     if (e.target.name === "q") {
-      searchInput.q = e.target.value;
+      setSearchInput({
+        ...searchInput,
+        q: e.target.value,
+      });
     } else if (e.target.name === "departmentId") {
-      searchInput.departmentId = e.target.value;
+      setSearchInput({
+        ...searchInput,
+        departmentId: e.target.value,
+      });
     } else if (e.target.name === "hasImages") {
-      searchInput.hasImages = e.target.checked;
+      setSearchInput({
+        ...searchInput,
+        hasImages: e.target.checked,
+      });
     } else if (e.target.name === "isHighlight") {
-      searchInput.isHighlight = e.target.checked;
+      setSearchInput({
+        ...searchInput,
+        isHighlight: e.target.checked,
+      });
     }
-    console.log(searchInput);
+    
+    let check = validate (searchInput);
+    setErrors(check);
   };
 
   let getResults = () => {
@@ -75,7 +95,7 @@ function Search() {
           handleSubmit(e);
         }}
       >
-        <label>Key Word *Required</label>
+        <label>Key Word(s)</label>
         <br />
         <input
           type="text"
@@ -83,9 +103,11 @@ function Search() {
           onChange={(e) => {
             handleChange(e);
           }}
-          
+          className={errors.q && "error"}
+      
         />
-        <br />
+        {errors.q ? <p className="error">{errors.q}</p>: <br/>}
+        
         <label>Department</label>
         <br />
         <select
@@ -93,6 +115,8 @@ function Search() {
           onChange={(e) => {
             handleChange(e);
           }}
+          className={errors.departmentId && "error"}
+
         >
           <option value="" disabled selected>Select a department *Required</option>
           <br />
@@ -101,14 +125,14 @@ function Search() {
               <option
                 key={department.departmentId}
                 value={department.departmentId}
-                
               >
                 {department.displayName}
               </option>
             );
           })}
         </select>
-        <br />
+        {errors.departmentId ? <p className="error">{errors.departmentId}</p>: <br/>}
+        
         <label>Has image</label>
         <input
           type="checkbox"
@@ -162,8 +186,20 @@ function Search() {
             );
           })
         : null}
+        {/* {console.log(searchInput)} */}
     </div>
   );
 }
 
 export default Search;
+
+export function validate (searchInput) {
+  let errors = {};
+  if (searchInput.q==='') {
+    errors.q = "Key word(s) are required";
+  }
+  if (searchInput.departmentId===0) {
+    errors.departmentId = "Department is required";
+  }
+  return errors;
+}

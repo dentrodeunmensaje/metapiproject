@@ -13,7 +13,7 @@ function Department(props) {
   const departmentWorkIds = useSelector((state) => state.departmentWorkIds);
   const departmentSearchMade = useSelector((state) => state.departmentSearchMade);
   const thisDepartment = departments.departments.find(
-    (department) => department.departmentId == props.match.params.id
+    (department) => department.departmentId === props.match.params.id
   );
   const dispatch = useDispatch();
   const [searching, setSearching] = useState(false);
@@ -104,7 +104,7 @@ function Department(props) {
         <p>Each Department maintains a library, most of the material of which can be requested online through the libraries' catalog.</p>
         </div>
       }
-      {thisDepartment.displayName == 	"American Decorative Arts" &&
+      {thisDepartment.displayName === 	"American Decorative Arts" &&
       <div>
         <p>The Metropolitan Museum of Art is situated in Lenapehoking, homeland of the Lenape diaspora, and historically a gathering and trading place for many diverse Native Peoples, who continue to live and work on this island. We respectfully acknowledge and honor all Indigenous communities—past, present, and future—for their ongoing and fundamental relationships to the region. Ever since its establishment in 1870, the Museum has acquired important examples of American art. A separate "American Wing" to display the domestic arts of the seventeenth to early nineteenth centuries opened in 1924; painting and sculpture galleries and a skylit courtyard were added in 1980. Today, the Wing's ever-evolving collection comprises some 20,000 works of art by African American, Euro American, Latin American, and Native American men and women. Ranging from the colonial to early-modern periods, the holdings include painting, sculpture, works on paper, and decorative arts—including furniture, textiles, ceramics, glass, silver, metalwork, jewelry, basketry, quill and bead embroidery—as well as historical interiors and architectural fragments.</p>
         </div>
@@ -151,11 +151,11 @@ function Department(props) {
        {console.log ({departments})} 
        {console.log (props.match.params.id)} */}
        {/* {departmentWorkIds ? console.log(departmentWorkIds.objectIDs) : null} */}
-       {console.log(departmentSearchMade)}
-       {console.log(departmentWorks)}
+       {/* {console.log(departmentSearchMade)}
+       {console.log(departmentWorks)} */}
        {!departmentSearchMade ? <button onClick={getWorks}>SHOW ME THE ART!</button> : null}
-       {departmentWorks.length === 0 && searching != false ? <p>Retrieving {departmentWorkIds.objectIDs.length} works from the database</p> : null}
-       {departmentWorks.length!=0 ? departmentWorks.map((work, index) => {
+       {departmentWorks.length === 0 && searching !== false ? <p>Retrieving {departmentWorkIds.objectIDs.length} works from the database</p> : null}
+       {departmentWorks.length!==0 ? departmentWorks.map((work, index) => {
           return(
             <div key={index}>
             <Work 

@@ -4,16 +4,15 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getObjectIds, getWork, getAllDepartments } from "../redux/actions";
 import { addWork } from "../redux/actions";
-import Work from "./Work";
-import { Link, NavLink } from "react-router-dom";
+
+import { NavLink } from "react-router-dom";
 import styles from "../styles/styles.css";
 
 function Nav() {
   const dispatch = useDispatch();
   const work = useSelector((state) => state.work);
-  const seenWorks = useSelector((state) => state.seenWorks);
-  const objectIds = useSelector((state) => state.objectIds);
-  const allDepartments = useSelector((state) => state.departments);
+  
+  
 
   useEffect(() => {
     dispatch(getObjectIds());
@@ -23,29 +22,24 @@ function Nav() {
     //console.log(seenWorks);
   }, []);
 
-  let handleSubmit = (e) => {
-    e.preventDefault();
-    const id = Math.trunc(
-      Math.floor(Math.random() * (objectIds.total - 0 + 1)) + 0
-    );
-    const realId = objectIds["objectIDs"][id];
-    console.log(realId, "resultado del random");
-    dispatch(addWork(work));
-    dispatch(getWork(realId));
-  };
 
   return (
     <div>
       <div >
         <ul>
           <li className="nav">
-            <Link to="/history">Your favourites</Link>
+            <NavLink to="/" exact>
+              Home
+            </NavLink>
           </li>&nbsp; &nbsp;
           <li className="nav">
-            <Link to="/departments">Departments</Link>
+            <NavLink to="/history">Your favorites</NavLink>
+          </li>&nbsp; &nbsp;
+          <li className="nav">
+            <NavLink to="/departments">Departments</NavLink>
           </li>&nbsp;&nbsp;
           <li className="nav">
-            <Link to="/search">Search</Link>
+            <NavLink to="/search">Search</NavLink>
           </li>&nbsp;&nbsp;
         </ul>
       </div>
