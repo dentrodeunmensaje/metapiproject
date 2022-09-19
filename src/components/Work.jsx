@@ -64,8 +64,10 @@ function Work({
   }, [seenWorks]);
 
   return (
-    <div className="work_full">
-      <h3>{title}</h3>
+    <div className="work_full container-fluid">
+      
+        <div className="col-md-4 col-lg-6 col-sm-12">
+      <h3 className="work-title">{title}</h3>
 
       {isFavorite ? (
         <div>
@@ -78,6 +80,7 @@ function Work({
                 handleRemove(e);
               }}
               value="Remove from favorites"
+              className="btn btn-warning btn-sm"
             />
           </form>
         </div>
@@ -92,13 +95,13 @@ function Work({
                 handleChange(e);
               }}
               value="Add to favorites"
+              className="btn btn-info btn-sm"
             />
           </form>
         </div>
       )}
 
-      {artist ? <p>Artist: {artist}</p> : null}
-      {image ? <img src={image} /> : <p>No main image in the API</p>}
+      {image ? <img className="col-md-12 col-lg-12 col-sm-12 col-xs-12 work-img" src={image} /> : <p>No main image in the API</p>}
       {/* {additionalImages ? (
         <>
             {additionalImages.map((image) => (
@@ -110,16 +113,20 @@ function Work({
           <br />
         </>
       ) : null} */}
-      {country ? <p>Country: {country}</p> : null}
-      {dimensions ? <p>Dimensions: {dimensions}</p> : null}
-      {medium ? <p>Medium: {medium}</p> : null}
-      {culture ? <p>Culture: {culture}</p> : null}
-      {department ? <p>Department: {department}</p> : null}
-      {date ? <p>Date: {date}</p> : null}
-      {culture ? <p>Culture: {culture}</p> : null}
-      {beginDate ? <p>Begin Date: {beginDate}</p> : null}
-      {endDate ? <p>End Date: {endDate}</p> : null}
+      <div className="work-desc">
+      {artist ? <p className="small description">Artist: {artist}</p> : null}
+      {country ? <p className="small description">Country: {country}</p> : null}
+      {dimensions ? <p className="small description">Dimensions: {dimensions}</p> : null}
+      {medium ? <p className="small description">Medium: {medium}</p> : null}
+      {culture ? <p className="small description">Culture: {culture}</p> : null}
+      {department ? <p className="small description">Department: {department}</p> : null}
+      {date ? <p className="small description">Date: {date}</p> : null}
+      {beginDate ? <p className="small description">Begin Date: {beginDate}</p> : null}
+      {endDate ? <p className="small description">End Date: {endDate}</p> : null}
+      </div>
     </div>
+    </div>
+    
   );
 }
 

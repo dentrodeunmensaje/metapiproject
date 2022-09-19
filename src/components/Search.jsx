@@ -87,7 +87,7 @@ function Search() {
   };
 
   return (
-    <div>
+    <div className="search">
       <h3>Search</h3>
       <form
         className="search-form"
@@ -106,8 +106,8 @@ function Search() {
           className={errors.q && "error"}
       
         />
-        {errors.q ? <p className="error">{errors.q}</p>: <br/>}
-        
+        {errors.q ? <p className="error alert alert-warning small">{errors.q}</p>: <br/>}
+        <br />
         <label>Department</label>
         <br />
         <select
@@ -131,8 +131,8 @@ function Search() {
             );
           })}
         </select>
-        {errors.departmentId ? <p className="error">{errors.departmentId}</p>: <br/>}
-        
+        {errors.departmentId ? <p className="error alert alert-warning small">{errors.departmentId}</p>: <br/>}
+        <br />
         <label>Has image</label>
         <input
           type="checkbox"
@@ -151,9 +151,12 @@ function Search() {
           }}
         />
         <br />
-        <input type="submit" value="Search" />
+        <br />
+
+        <input type="submit" value="Search" className="btn btn-primary" />
       </form>
-      <button onClick={clearResults}>Clear search results</button>
+      <br />
+      <button onClick={clearResults} className="btn btn-primary">Clear search results</button>
       {searchResults.objectIDs && searchMade === false ? getResults() : null}
       {searchResults.total ? (
         <p>Total Results:{searchResults.total}</p>

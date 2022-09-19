@@ -1,3 +1,112 @@
 .nav {
   display: inline-block;
 }
+body { padding-bottom: 70px; }
+
+footer{
+  font-size: 14px;
+  background: rgb(254,254,254);
+  background: linear-gradient(90deg, rgba(254,254,254,1) 0%, rgba(202,202,244,1) 35%, rgba(180,233,244,1) 100%);
+}
+.fotterText{
+  font-size: 10px;
+  margin: 0px;
+  background: rgb(254,254,254);
+  background: linear-gradient(90deg, rgba(254,254,254,1) 0%, rgba(202,202,244,1) 35%, rgba(180,233,244,1) 100%);
+
+}
+.mainTitle{
+  text-align: right;
+  margin-right: 10%;
+  margin-top: 15px;
+  display: grid;
+  color: rgb(23, 24, 24);
+  text-shadow: 5px 5px 5px #b4e9f4;
+}
+.title-logo{
+  height: 50px;
+  vertical-align: auto;
+  display: flexbox;
+  margin-left: 85%;
+}
+.error{
+  padding: 2px;
+  font-size: x-small;
+  display: inline-block;
+}
+.search{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.department{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.departments{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.art-btn{
+  display: grid;
+}
+.description{
+  margin:0px;
+  text-align: right;
+}
+.work-desc{
+  position: absolute;
+  display: none;
+}
+.work-img:hover ~ .work-desc{
+  display: block;
+  position: relative;
+  top: 0px;
+}
+.work_full{
+  display: inline;
+  width: auto;
+}
+.home{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+.home-img{
+  width: 100%;
+  align-items: center;
+}
+.work-title{
+  text-align: center;
+}
+.header{
+  background-image: url(https://www.metmuseum.org/-/media/images/events/date-night-large.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.home-title{
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+body{
+  background: rgb(254,254,254);
+  background: linear-gradient(90deg, rgba(254,254,254,1) 0%, rgba(202,202,244,1) 35%, rgba(180,233,244,1) 100%);
+  
+}
+NavLink{
+  text-decoration: none;
+}

@@ -24,25 +24,26 @@ function Nav() {
 
 
   return (
-    <div>
-      <div >
-        <ul>
-          <li className="nav">
+    <nav className="navbar navbar-inverse">
+      <div className="container-fluid">
+        <ul className="nav navbar-nav navbar-right">
+          <li className="nav active nav-element">
             <NavLink to="/" exact>
               Home
             </NavLink>
           </li>&nbsp; &nbsp;
-          <li className="nav">
+          <li className="nav nav-element">
             <NavLink to="/history">Your favorites</NavLink>
           </li>&nbsp; &nbsp;
-          <li className="nav">
+          <li className="nav nav-element">
             <NavLink to="/departments">Departments</NavLink>
           </li>&nbsp;&nbsp;
-          <li className="nav">
+          <li className="nav nav-element">
             <NavLink to="/search">Search</NavLink>
           </li>&nbsp;&nbsp;
         </ul>
       </div>
+      
 
       {/* <button
         className="mainButton"
@@ -74,7 +75,7 @@ function Nav() {
           );
         }
       })} */}
-    </div>
+    </nav>
   );
 }
 
