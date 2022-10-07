@@ -65,11 +65,13 @@ footer{
 .work-desc{
   position: absolute;
   display: none;
+  
 }
 .work-img:hover ~ .work-desc{
   display: block;
   position: relative;
   top: 0px;
+  font-size: 0.8em;
 }
 .work_full{
   display: inline;
@@ -90,7 +92,7 @@ footer{
   text-align: center;
 }
 .header{
-  background-image: url(https://www.metmuseum.org/-/media/images/events/date-night-large.jpg);
+  background-image: url(./components/images/date-night.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -109,4 +111,14 @@ body{
 }
 NavLink{
   text-decoration: none;
+}
+.nav-element{
+  font-size: 1.5em;
+}
+.work_full{
+  display: flex;
+  width: 30%;
+}
+.flex-child{
+  flex: 1;
 }

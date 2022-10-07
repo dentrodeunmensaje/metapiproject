@@ -167,7 +167,7 @@ function Search() {
       {works
         ? works.map((work) => {
             return (
-              <div key= {work.objectID}>
+              <div key= {work.objectID} className="searchResults">
               <Work
                 title={work.title}
                 image={work.primaryImageSmall}
