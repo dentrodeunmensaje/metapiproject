@@ -40,6 +40,7 @@ footer{
   margin-left: 10px;
   margin-right: 10px;
   display: inline-block;
+  font-size: 1.5em;
 }
 .department{
   margin-top: 10px;
@@ -70,11 +71,14 @@ footer{
 .work-img:hover ~ .work-desc{
   display: block;
   position: relative;
-  top: 0px;
-  font-size: 0.8em;
+  font-size: 1em;
+  color: black;
 }
+
+/*for smartphones subtitute hover action for click*/
+
 .work_full{
-  display: inline;
+  
   width: auto;
 }
 .home{
@@ -88,9 +92,7 @@ footer{
   width: 100%;
   align-items: center;
 }
-.work-title{
-  text-align: center;
-}
+
 .header{
   background-image: url(./components/images/date-night.jpg);
   background-size: cover;
@@ -115,10 +117,105 @@ NavLink{
 .nav-element{
   font-size: 1.5em;
 }
-.work_full{
-  display: flex;
-  width: 30%;
+.department-results{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 1rem;
 }
-.flex-child{
-  flex: 1;
+.searchResults{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: auto;
+}
+.work_full{
+  margin-top: 30px;
+  width: 50%;
+}
+.work-img{
+  width: 100%;
+  
+}
+.work_full:hover{
+  background-color: #b4e9f46a;
+}
+.work-title{
+  text-align: center;
+  font-size: 3rem;
+}
+.fav-btn{
+  display: block;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 60%;
+  align-items: center;
+  transform: translateX(55%);
+}
+.details{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.show-me{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+input{
+  font-size: 1em;
+}
+option{
+  font-size: 1em;
+}
+.departments{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 1.5em;
+}
+@media screen and (max-width: 600px) {
+  .work-desc{
+    display: block;
+    position: relative;
+    font-size: 1em;
+    color: black;
+  }
+  .departmentResults{
+    display: block;
+    width: 100%;
+    margin: 0%;
+  }
+  .work-img{
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    margin: 0 auto;
+    position: re;
+  }
+  .work-title{
+    text-align: left;
+    width: 100%;
+  }
+  .work_full{
+    width: 100%;
+  }
+  .details{
+    display: none;
+  }
+  .work-title{
+    text-align: center;
+    font-size: 2rem;
+  }
 }

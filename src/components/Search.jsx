@@ -77,12 +77,12 @@ function Search() {
   };
 
   let clearResults = () => {
-    searchInput = {
+    setSearchInput({
       q: "",
       departmentId: 0,
       hasImages: false,
       isHighlight: false,
-    };
+    });
     dispatch(clearSearchResults());
   };
 
@@ -151,11 +151,11 @@ function Search() {
           }}
         />
         <br />
-        <br />
+        
 
         <input type="submit" value="Search" className="btn btn-primary" />
       </form>
-      <br />
+      
       <button onClick={clearResults} className="btn btn-primary">Clear search results</button>
       {searchResults.objectIDs && searchMade === false ? getResults() : null}
       {searchResults.total ? (

@@ -50,6 +50,7 @@ function Work({
   }
 
   function handleRemove(event) {
+    setIsFavorite(false);
     dispatch(removeFromSeenWorks(objectID));
   }
 
@@ -65,13 +66,13 @@ function Work({
   }, [seenWorks]);
 
   return (
-    <div className="work_full container-fluid">
+    <div className="work_full container-fluid  ">
       <div className="flex-child">
         <h3 className="work-title">{title}</h3>
 
         {isFavorite ? (
-          <div>
-            <form>
+          <>
+            <form className="fav-btn">
               <input
                 type="button"
                 id="favorites"
@@ -80,13 +81,13 @@ function Work({
                   handleRemove(e);
                 }}
                 value="Remove from favorites"
-                className="btn btn-warning btn-sm"
+                className="btn btn-warning btn-md"
               />
             </form>
-          </div>
+          </>
         ) : (
-          <div>
-            <form>
+          <>
+            <form className="fav-btn">
               <input
                 type="button"
                 id="favorites"
@@ -95,20 +96,20 @@ function Work({
                   handleChange(e);
                 }}
                 value="Add to favorites"
-                className="btn btn-info btn-sm"
+                className="btn btn-info btn-md"
               />
             </form>
-          </div>
+          </>
         )}
 
         {image ? (
           <img
-            className="col-md-12 col-lg-12 col-sm-12 col-xs-12 work-img"
+            className="col-md-6 col-lg-6 col-sm-6 col-xs-6 work-img"
             src={image}
           />
         ) : (
           <img
-            className="col-md-12 col-lg-12 col-sm-12 col-xs-12 work-img"
+            className="col-md-6 col-lg-6 col-sm-6 col-xs-6 work-img"
             src={noimage}
           />
         )}

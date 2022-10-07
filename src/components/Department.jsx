@@ -280,7 +280,11 @@ function Department(props) {
             Peninsula. The ancient Near East is studied in the fields of Ancient
             Near East studies, Near Eastern archaeology and ancient history.{" "}
           </p>
-          <img src={ancientneareastern} alt="ancient near east" className="img-fluid" />
+          <img
+            src={ancientneareastern}
+            alt="ancient near east"
+            className="img-fluid"
+          />
         </div>
       )}
       {thisDepartment.displayName ===
@@ -298,7 +302,6 @@ function Department(props) {
             disinterest in his art collection.
           </p>
           <img src={ancientamericas} alt="africa" className="img-fluid" />
-
         </div>
       )}
       {thisDepartment.displayName === "The Costume Institute" && (
@@ -343,7 +346,11 @@ function Department(props) {
             European markets and sculpture and decorative arts produced in Latin
             America during this period are also included among these works.
           </p>
-          <img src={europeansculpture} alt="european sculpture" className="img-fluid" />
+          <img
+            src={europeansculpture}
+            alt="european sculpture"
+            className="img-fluid"
+          />
         </div>
       )}
       {thisDepartment.displayName === "Musical Instruments" && (
@@ -359,7 +366,11 @@ function Department(props) {
             that she had donated and the collection was housed in five
             galleries.
           </p>
-          <img src={instruments} alt="musical instruments" className="img-fluid" />
+          <img
+            src={instruments}
+            alt="musical instruments"
+            className="img-fluid"
+          />
         </div>
       )}
       {thisDepartment.displayName === "Modern Art" && (
@@ -389,7 +400,7 @@ function Department(props) {
        {console.log(departmentWorks)} */}
 
       {!departmentSearchMade ? (
-        <div class="d-grid gap-2">
+        <div class="d-grid gap-2 show-me">
           <button
             onClick={getWorks}
             className="btn btn-success btn-block art-btn"
@@ -398,15 +409,23 @@ function Department(props) {
           </button>{" "}
         </div>
       ) : null}
-
-      {departmentWorks.length === 0 && searching !== false ? (
-        <p>
-          Retrieving {departmentWorkIds.objectIDs.length} works from the
-          database
-        </p>
-      ) : null}
+      <div className="loading">
+        {departmentWorks.length === 0 && searching !== false ? (
+          <p>
+            Retrieving {departmentWorkIds.objectIDs.length} works from the
+            database
+          </p>
+        ) : null}
+      </div>
+      <div className="loading">
       {departmentWorks.length === 0 && searching !== false ? (
         <img src={loading}></img>
+      ) : null}
+      </div>
+      {departmentWorks.length !== 0 ? (
+        <div className="details">
+          <h6>Hover over the image of a result to view it´s details</h6>
+        </div>
       ) : null}
       {departmentWorks.length !== 0
         ? departmentWorks.map((work, index) => {
