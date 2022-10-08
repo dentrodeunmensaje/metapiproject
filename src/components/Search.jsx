@@ -87,7 +87,7 @@ function Search() {
   };
 
   return (
-    <div className="search">
+    <div className="department">
       <h3>Search</h3>
       <form
         className="search-form"

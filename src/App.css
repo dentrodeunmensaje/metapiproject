@@ -64,8 +64,8 @@ footer{
   text-align: right;
 }
 .work-desc{
-  position: absolute;
-  display: none;
+  position: relative;
+  display: block;
   
 }
 .work-img:hover ~ .work-desc{
@@ -184,6 +184,9 @@ option{
   display: inline-block;
   font-size: 1.5em;
 }
+.btn-primary{
+  margin-bottom:5px;
+}
 @media screen and (max-width: 600px) {
   .work-desc{
     display: block;
@@ -194,19 +197,25 @@ option{
   .departmentResults{
     display: block;
     width: 100%;
-    margin: 0%;
+    margin: 0;
+  }
+  .searchResults{
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: #b4e9f46a;
   }
   .work-img{
-    display: flex;
+    display: block;
     justify-content: center;
-    
-    width: 100%;
-    margin: 0 auto;
-    position: re;
+    width: 50%;
+    margin-left: 25%;
+    position: relative;
+
   }
   .work-title{
     text-align: left;
-    width: 100%;
+    width: 50%;
   }
   .work_full{
     width: 100%;
@@ -217,5 +226,18 @@ option{
   .work-title{
     text-align: center;
     font-size: 2rem;
+    width: 100%;
   }
+  .fav-btn{
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+    width: 60%;
+    align-items: left;
+    transform: translateX(50%);
+  }
+  .btn-primary{
+    margin-bottom:5px;
+  }
+
 }
