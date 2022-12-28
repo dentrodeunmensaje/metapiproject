@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/metapiproject/static/css/main.dbf17ad9.css",
+    "main.js": "/metapiproject/static/js/main.6ecf35ce.js",
+    "static/js/787.58615c33.chunk.js": "/metapiproject/static/js/787.58615c33.chunk.js",
+    "static/media/entrada.jpg": "/metapiproject/static/media/entrada.2689e1304e163bc613a7.jpg",
+    "static/media/noimage.png": "/metapiproject/static/media/noimage.467d65ee4cc750bdfda0.png",
+    "static/media/decorative.jpg": "/metapiproject/static/media/decorative.e49ca90895f5b16d13f1.jpg",
+    "static/media/ancient-near-eastern.jpg": "/metapiproject/static/media/ancient-near-eastern.87fb35ddd2bf42ef860a.jpg",
+    "static/media/date-night.jpg": "/metapiproject/static/media/date-night.fcd83d83c6bf32597d44.jpg",
+    "static/media/The-American-Wing.jpg": "/metapiproject/static/media/The-American-Wing.82164c7307b4e81a0601.jpg",
+    "static/media/asian-art.jpg": "/metapiproject/static/media/asian-art.5f287ef776154ac8b6bb.jpg",
+    "static/media/entrada2.jpg": "/metapiproject/static/media/entrada2.f12509f4c42594110c6d.jpg",
+    "static/media/egyptian-art.jpg": "/metapiproject/static/media/egyptian-art.5c91c560ec35c0332f86.jpg",
+    "static/media/instruments.jpg": "/metapiproject/static/media/instruments.04b263d2ac9e09a0886d.jpg",
+    "static/media/africa.jpg": "/metapiproject/static/media/africa.5ca8f91e2f7278e534ca.jpg",
+    "static/media/medieval.jpg": "/metapiproject/static/media/medieval.5984c394c891c181b6b6.jpg",
+    "static/media/robert.jpg": "/metapiproject/static/media/robert.012836862e179937aa73.jpg",
+    "static/media/european-sculpture.jpg": "/metapiproject/static/media/european-sculpture.92094dfa4ca5c105e0c9.jpg",
+    "static/media/greek-roman-art.jpg": "/metapiproject/static/media/greek-roman-art.124c6b4c2e4a343ec89c.jpg",
+    "static/media/arms-and-armor.jpg": "/metapiproject/static/media/arms-and-armor.7326f4c0392ecc6cbe10.jpg",
+    "static/media/libraries.jpg": "/metapiproject/static/media/libraries.0025cfbd115249a47513.jpg",
+    "static/media/islamic.jpg": "/metapiproject/static/media/islamic.57dc30421253ab7f92e0.jpg",
+    "static/media/modern.jpg": "/metapiproject/static/media/modern.6dfbed2fb633eb19be48.jpg",
+    "static/media/oceanic.jpg": "/metapiproject/static/media/oceanic.6fcda0df80ad15f36a42.jpg",
+    "static/media/costume-institute.jpg": "/metapiproject/static/media/costume-institute.a8b95f3004a63f96d221.jpg",
+    "static/media/ancient-americas.jpg": "/metapiproject/static/media/ancient-americas.ac5bb1ea7cc399c0cdd4.jpg",
+    "static/media/european.jpg": "/metapiproject/static/media/european.9dabba5edc01fb53c0cd.jpg",
+    "static/media/drawings-and-prints.jpg": "/metapiproject/static/media/drawings-and-prints.199cf360f8184904709c.jpg",
+    "static/media/photographs.jpg": "/metapiproject/static/media/photographs.5e2a2c2f7886cd14ba3d.jpg",
+    "static/media/loading1.gif": "/metapiproject/static/media/loading1.683de37f140baf35dc18.gif",
+    "index.html": "/metapiproject/index.html",
+    "main.dbf17ad9.css.map": "/metapiproject/static/css/main.dbf17ad9.css.map",
+    "main.6ecf35ce.js.map": "/metapiproject/static/js/main.6ecf35ce.js.map",
+    "787.58615c33.chunk.js.map": "/metapiproject/static/js/787.58615c33.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbf17ad9.css",
+    "static/js/main.6ecf35ce.js"
+  ]
+}
