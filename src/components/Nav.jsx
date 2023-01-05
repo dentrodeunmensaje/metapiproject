@@ -28,7 +28,7 @@ function Nav() {
       <div className="container-fluid">
         <ul className="nav navbar-nav navbar-right">
           <li className="nav active nav-element">
-            <NavLink to="/" exact>
+            <NavLink to="/metapiproject">
               Home
             </NavLink>
           </li>&nbsp; &nbsp;
