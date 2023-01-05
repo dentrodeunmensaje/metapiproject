@@ -18,7 +18,7 @@ function App() {
       </header>
       <body>
       <Route path={"/"} component={Nav} />
-      <Route exact path={"/"} component={Home} />
+      <Route exact path={"/metapiproject"} component={Home} />
         <Route exact path={"/history"} component={History} />
         <Route exact path={"/departments"} component={Departments} />
         <Route exact path={"/search"} component={Search} />
